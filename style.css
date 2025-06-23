@@ -14,7 +14,7 @@ html, body {
 
 
 header {
-  background-color: #222;
+  background-color: #111111;
   color: white;
   padding: 20px;
   display: flex;
@@ -28,6 +28,7 @@ nav a {
   text-decoration: none;
   flex-direction: column;
 }
+
 
 .produtos-container {
   display: flex;
@@ -68,7 +69,7 @@ button:hover {
 footer {
   text-align: center;
   padding: 10px;
-  background-color: #222;
+  background-color: #0e0d0d;
   color: white;
   position: relative;
   bottom: 0;
@@ -94,6 +95,80 @@ footer {
   object-fit: cover;
 }
 
+
+.nav {
+  display: flex;
+  gap: 20px;
+  background-color: #111;
+  padding: 10px 20px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+
+.menu-toggle {
+  display: none;
+  position: relative;
+  top: 15px;
+  left: 15px;
+  font-size: 26px;
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  top: -3px;
+  border-radius: 5px;
+  z-index: 1001;
+  cursor: pointer;
+}
+/* Painel do carrinho lateral */
+.carrinho-container {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  border-left: 2px solid #ccc;
+  padding: 20px;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+  transition: right 0.3s ease;
+  z-index: 1002;
+}
+
+.carrinho-container.open {
+  right: 0;
+}
+
+.carrinho-container h2 {
+  margin-top: 0;
+}
+
+.carrinho-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.carrinho-container li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.carrinho-container button {
+  background-color: #111;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
 @keyframes slide {
   0%   { transform: translateX(0%); }
   20%  { transform: translateX(0%); }
@@ -110,6 +185,43 @@ footer {
   .carrossel{
     display: none;
   }
-  
-  
+
+ 
+}
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .h1 {
+  display: flex;
+  align-items: center;
+  padding-left: 70px;
+  }
+
+  .nav {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 220px;
+    background-color: #111;
+    padding-top: 60px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  .nav.active {
+    transform: translateX(0);
+  }
+
+
+  body.menu-open header,
+  body.menu-open main,
+  body.menu-open footer {
+    margin-left: 220px;
+    transition: margin 0.3s ease;
+  }
 }

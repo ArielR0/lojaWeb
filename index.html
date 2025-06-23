@@ -8,9 +8,10 @@
 </head>
 <body>
   <header>
+    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
 
-    <h1>TechStore</h1>
-    <nav>
+    <h1 class="txt">TechStore</h1>
+    <nav class="nav">
       <a href="#">Home</a>
       <a href="#">Produtos</a>
       <a href="#">Carrinho</a>
@@ -56,7 +57,7 @@
     </div>
 
      <div class="produto">
-      <img src="./imgs/teclado1.jfif" alt="teclado">
+      <img src="./imgs/teclado.webp" alt="teclado">
       <h2>Teclado Gamer</h2>
       <p>R$ 949,79</p>
       <button onclick="adicionarAoCarrinho('Teclado Gamer')">Adicionar ao Carrinho</button>
@@ -101,7 +102,7 @@
       <img src="./imgs/placa video.webp" alt="Placa de Video">
       <h2>GeForce RTX 1650</h2>
       <p>R$ 1.000,00</p>
-      <button onclick="adicionarAoCarrinho('Smartphone XYZ')">Adicionar ao Carrinho</button>
+      <button onclick="adicionarAoCarrinho('Placa de Video')">Adicionar ao Carrinho</button>
     </div>
 
      <div class="produto">
@@ -122,6 +123,8 @@
   <footer>
     <p>&copy; 2025 TechStore. Todos os direitos reservados.</p>
   </footer>
+
+  
 
   <script src="script.js"></script>
 </body>
